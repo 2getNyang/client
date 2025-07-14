@@ -11,6 +11,18 @@ export interface Shelter {
   longitude?: number;
 }
 
+// 보호소 상세정보
+export interface ShelterDetail {
+  careRegNumber: string;
+  careName: string;
+  careTel: string;
+  careAddress: string;
+  latitude: number;
+  longitude: number;
+  regionName: string;
+  subRegionName: string;
+}
+
 export interface Province {
   code: string;
   name: string;
