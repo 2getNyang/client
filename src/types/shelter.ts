@@ -1,19 +1,13 @@
-
 export interface Shelter {
-  id: string;
-  name: string;
-  introduction: string;
-  province: string;
-  city: string;
-  address: string;
-  phone: string;
-  latitude?: number;
-  longitude?: number;
+  careRegNumber: string;
+  careName: string;
+  careTel: string;
+  regionName: string;
+  subRegionName: string;
 }
 
 // 보호소 상세정보
 export interface ShelterDetail {
-  careRegNumber: string;
   careName: string;
   careTel: string;
   careAddress: string;
@@ -23,13 +17,10 @@ export interface ShelterDetail {
   subRegionName: string;
 }
 
-export interface Province {
-  code: string;
-  name: string;
+export interface RegionDTO {
+  regionName: string; // 시도 이름
 }
 
-export interface City {
-  code: string;
-  name: string;
-  provinceCode: string;
+export interface SubRegionDTO {
+  subRegionName: string; // 시군구 이름
 }
