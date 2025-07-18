@@ -71,7 +71,14 @@ const BoardCard = ({ post }: BoardCardProps) => {
 
   // 대표 이미지를 결정하는 함수
   const getThumbnailImage = () => {
-    
+    // SNS 게시물이고 Instagram 링크가 있는 경우
+    if (post.category === 'sns' && post.instagramLink) {
+      const postId = post.instagramLink.split('/p/')[1]?.split('/')[0];
+      if (postId) {
+        return `https://images.unsplash.com/photo-1611095564982-c1cb2cccefae?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80`;
+      }
+    }
+
     // 여러 이미지가 있는 경우 첫 번째 이미지 사용
     if (post.images && post.images.length > 0) {
       return post.images[0];
